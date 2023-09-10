@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+# 日志配置
+logging:
+  pattern:
+    console: '%clr(%d{E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
+              %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n'
+  logback:
+    rollingpolicy:
+      clean-history-on-start: true
+      max-history: 10
+  level:
+    org.springframework: warn
+    com.nt: debug
+
+spring:
+  # 文件上传
+  servlet:
+    multipart:
+      # 单个文件大小
+      max-file-size: 50MB
+      # 设置总上传的文件大小
+      max-request-size: 100MB
+
+## 项目相关配置
+natu:
+  save-file:
+    temp-path: ./temp
+    save-path: ./save
+    # 5 * 1024 * 1024
+    chunk-size: 5242880
+    save-type: LOCAL

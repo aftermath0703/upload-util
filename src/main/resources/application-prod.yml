@@ -1,0 +1,9 @@
+logging:
+  file:
+    path: /var/tool_log
+  level:
+    com.nt: debug
+
+spring:
+  profiles:
+    - prod
